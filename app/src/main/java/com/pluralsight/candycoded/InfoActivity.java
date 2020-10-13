@@ -9,6 +9,8 @@ import android.view.*;
 
 import com.squareup.picasso.Picasso;
 
+import java.net.URI;
+
 public class InfoActivity extends AppCompatActivity {
 
     @Override
@@ -32,6 +34,13 @@ public class InfoActivity extends AppCompatActivity {
        if (mapIntent.resolveActivity(getPackageManager()) != null){
            startActivity(mapIntent);
        }
+
+    }
+    public void createPhoneIntent(View view){
+      Intent callintent = new Intent(Intent.ACTION_DIAL);
+      Uri uri = Uri.parse("tel:0123456789");
+      callintent.setData(uri);
+      startActivity(callintent);
 
     }
 
